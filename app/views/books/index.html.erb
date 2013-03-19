@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>wabook</title>
+        <meta charset="UTF-8" />
+        <link href="/wabook_main.css" media="screen" rel="stylesheet" type="text/css" >
+    </head>
+
+    <body>
+        <div id="links">
+            <a href="/wabook_main.html"><img src="assets/wabook.png"</a>
+            <a href="/wabook_ranking.html">명예의 전당</a>
+            <a href="/wabook_mypage.html">My Page</a>
+
+            <a href="/study.html">logout</a>
+        </div>
+
+        <div id="categorize">
+            <p class="categorize">see</p>
+            <select>
+                <option value="all">all</option>
+                <option value="문학">문학</option>
+                <option value="비문학">비문학</option>
+                <option value="전공서적">전공서적</option>
+                <option value="예술">예술</option>
+            </select>
+        </div>
+
+        <div id="booklist">
+        <table>
+                <tr>
+                    <th>분류</th>
+                    <th>책 제목</th>
+                    <th>저자</th>
+                    <th>출판사</th>
+                    <th>대여여부</th>
+                </tr>
+                <tr>
+                    <td>문학</td>
+                    <td>나무</td>
+                    <td>베르나르 베르베르</td>
+                    <td>뫼비우스</td>
+                    <td><button>대여가능</button></td>
+                </tr>
+              
+                <tr>
+                    <td>비문학</td>
+                    <td>나는 나와 연애한다</td>
+                    <td>문은식</td>
+                    <td>생각의나무</td>
+                    <td><button>대여중</button></td>
+                </tr>
+              
+                <tr>
+                    <td>비문학</td>
+                    <td>나는 나와 연애한다</td>
+                    <td>문은식</td>
+                    <td>생각의나무</td>
+                    <td><button>대여중</button></td>
+                </tr>
+              
+                <tr>
+                    <td>비문학</td>
+                    <td>나는 나와 연애한다</td>
+                    <td>문은식</td>
+                    <td>생각의나무</td>
+                    <td><button>대여중</button></td>
+                </tr>
+
+                <tr>
+                    <td>비문학</td>
+                    <td>나는 나와 연애한다</td>
+                    <td>문은식</td>
+                    <td>생각의나무</td>
+                    <td><button>대여중</button></td>
+                </tr>
+            </table>
+    </div>
+
+
+    <div id="search">
+        <form>
+            <select>
+                <option value="책 제목">책 제목</option>
+                <option value="저자">저자</option>
+            </select>
+
+            <input type="text" id="searchbox" />
+            <input type="button" value="검색" />
+        </form>
+
+
+    </div>
+    </body>
+
+
+</html>
