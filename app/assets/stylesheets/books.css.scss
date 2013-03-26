@@ -1,10 +1,10 @@
 
 * {
   margin:0;
+  font-size:12px;
   font-family:"Dotum";
   vertical-align:middle;
 }
-
 body {
   margin-top:20px;
   width:700px;
@@ -23,20 +23,70 @@ body {
   margin-top:20px;
   display:inline-block;
 }
+
+.booktop, .bookClass {
+margin-top:4px;
+display: inline-block;
+  text-align: center;
+float: left;
+}
+
 p.categorize {
-
-  display:inline-block;
 }
 
-table {
-  width:100%;
-  font-size:13px;
-  text-align:center;
+p.category {
+
+width:10%;
 }
-th {
+
+p.title {
+
+width:35%;
+}
+
+p.author {
+
+width:20%;
+}
+
+p.publisher {
+
+width:20%;
+}
+
+p.available {
+
+width:15%;
+}
+
+button.available {
+width:15%;
+}
+
+#booktop {
   height:20px;
+         margin-top:4px;
   background-color:#FFDEE9;
 }
+
+.book{
+       margin-top:4px;
+}
+
+.outside {
+height:20px;
+
+
+}
+
+.content{
+padding:100px;
+        background-color:#BABAD1;
+display: none;
+}
+
+
+
 #nav {
   float:right;
   font-size:14px;
