@@ -1,173 +1,181 @@
+<div id="categorize">
+  <p class="categorize">see</p>
+  <select>
+    <option value="all">all</option>
+    <option value="문학">문학</option>
+    <option value="비문학">비문학</option>
+    <option value="전공서적">전공서적</option>
+    <option value="예술">예술</option>
+  </select>
+</div>
 
+<% @books.each do |book| %>
+  <div>
+    <%= book.category %>
+    <%= book.title  %>
+    <%= book.author %>
+    <%= book.publisher %>
+    <%= book.available %>
+  </div>
+<% end %>
 
-    <div id="categorize">
-      <p class="categorize">see</p>
-      <select>
-        <option value="all">all</option>
-        <option value="문학">문학</option>
-        <option value="비문학">비문학</option>
-        <option value="전공서적">전공서적</option>
-        <option value="예술">예술</option>
-      </select>
+<div id="booklist">
+  <table>
+    <tr>
+      <th>분류</th>
+      <th>책 제목</th>
+      <th>저자</th>
+      <th>출판사</th>
+      <th>대여여부</th>
+    </tr>
+    <div id="flip">
+      <tr>
+        <td>문학</td>
+        <td>나무</td>
+        <td>베르나르 베르베르</td>
+        <td>뫼비우스</td>
+        <td><button>대여가능</button></td>
+      </tr>
+    </div>
+    <div id="panel">
+      <tr>
+        <td colspan="5">
+          책이미지<br>
+          책기본정보<br>
+          줄거리<br>
+          댓글달기<br>
+
+        </td>
+      </tr>
     </div>
 
-    <div id="booklist">
-      <table>
-        <tr>
-          <th>분류</th>
-          <th>책 제목</th>
-          <th>저자</th>
-          <th>출판사</th>
-          <th>대여여부</th>
-        </tr>
-        <div id="flip">
-          <tr>
-            <td>문학</td>
-            <td>나무</td>
-            <td>베르나르 베르베르</td>
-            <td>뫼비우스</td>
-            <td><button>대여가능</button></td>
-          </tr>
-        </div>
-        <div id="panel">
-          <tr>
-            <td colspan="5">
-              책이미지<br>
-              책기본정보<br>
-              줄거리<br>
-              댓글달기<br>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-            </td>
-          </tr>
-        </div>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
+    <tr>
+      <td>문학</td>
+      <td>나무</td>
+      <td>베르나르 베르베르</td>
+      <td>뫼비우스</td>
+      <td><button>대여가능</button></td>
+    </tr>
 
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>문학</td>
-          <td>나무</td>
-          <td>베르나르 베르베르</td>
-          <td>뫼비우스</td>
-          <td><button>대여가능</button></td>
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
+    <tr>
+      <td>문학</td>
+      <td>나무</td>
+      <td>베르나르 베르베르</td>
+      <td>뫼비우스</td>
+      <td><button>대여가능</button></td>
+    </tr>
 
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>문학</td>
-          <td>나무</td>
-          <td>베르나르 베르베르</td>
-          <td>뫼비우스</td>
-          <td><button>대여가능</button></td>
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
 
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
-
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
-
-        <tr>
-          <td>비문학</td>
-          <td>나는 나와 연애한다</td>
-          <td>문은식</td>
-          <td>생각의나무</td>
-          <td><button>대여중</button></td>
-        </tr>
-      </table>
-    </div>
+    <tr>
+      <td>비문학</td>
+      <td>나는 나와 연애한다</td>
+      <td>문은식</td>
+      <td>생각의나무</td>
+      <td><button>대여중</button></td>
+    </tr>
+  </table>
+</div>
 
 
-    <div id="search">
-      <form>
-        <select>
-          <option value="책 제목">책 제목</option>
-          <option value="저자">저자</option>
-        </select>
+<div id="search">
+  <form>
+    <select>
+      <option value="책 제목">책 제목</option>
+      <option value="저자">저자</option>
+    </select>
 
-        <input type="text" class="searchbox" />
-        <input type="button" value="검색" />
-      </form>
+    <input type="text" class="searchbox" />
+    <input type="button" value="검색" />
+  </form>
 
 
-    </div>
+</div>
