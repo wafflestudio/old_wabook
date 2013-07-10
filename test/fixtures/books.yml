@@ -1,21 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  category: MyString
   title: MyString
+  category: MyString
   author: MyString
   publisher: MyString
-  available: false
-  due: 1
-  lender: 1
-  overdue: false
 
 two:
-  category: MyString
   title: MyString
+  category: MyString
   author: MyString
   publisher: MyString
-  available: false
-  due: 1
-  lender: 1
-  overdue: false
