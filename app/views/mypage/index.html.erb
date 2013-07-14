@@ -13,13 +13,14 @@
       <th></th>
     </tr>
     <% $i = 1 %>
-    <% @checkout_list.each do |b| %>
+    <% @checkout_list.each do |l| %>
+        <% book = Books.find_by_id(l[0]) %>
       <tr>
         <td><%= $i %></td>
-        <td><%= b.title %></td>
-        <td><%= b.author %></td>
-       <td>2013/03/15</td>
-       <td>2013/03/22</td>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= l[1] %></td>
+        <td><%= l[2] %></td>
        <td><button>연장</button></td>
      </tr>
      <% $i = $i+1 %>
@@ -32,6 +33,30 @@
 <div id="prevlist">
 
   <p>이전 대출 내역</p>
+  <table>
+
+    <tr>
+      <th>순번</th>
+      <th>책이름</th>
+      <th>저자</th>
+      <th>대출일</th>
+      <th>반납예정일</th>
+      <th></th>
+    </tr>
+    <% $i = 1 %>
+    <% @checkout_list_returned.each do |l| %>
+        <% book = Books.find_by_id(l[0]) %>
+      <tr>
+        <td><%= $i %></td>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= l[1] %></td>
+        <td><%= l[2] %></td>
+       <td><button>연장</button></td>
+     </tr>
+     <% $i = $i+1 %>
+     <% end %>
+  </table>
   <div id="search">
     <p class="search">기간조회 </p> 
     <form><input type="text"></form>~<form><input type="text"></form><button>검색</button>
