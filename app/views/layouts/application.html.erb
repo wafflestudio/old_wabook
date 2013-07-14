@@ -3,8 +3,11 @@
 <head>
   <title>Wabook</title>
   <script type="text/javascript" src="/test.js"></script>
-
-
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
   <%= link_to books_path, :class => "logo" do %>
       <%= image_tag "wabook.png" %>
       <!--<img src="assets/wabook.png">-->
@@ -28,12 +31,6 @@
 
   <div id="c">
   </div>
-
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
   <%= yield %>
 
