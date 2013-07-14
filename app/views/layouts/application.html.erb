@@ -14,7 +14,11 @@
     
     <%= link_to "명예의 전당", rank_index_path, :class =>"link" %>
     <%= link_to "My Page", mypage_index_path, :class =>"link" %>
-    <%= link_to "logout", destroy_user_session_path, :method => :delete, :class =>"link" %>
+    <% if !signed_in? %>
+        <%= link_to "login", new_user_session_path, :method => :create, :class => "link" %>
+    <% else %>
+        <%= link_to "logout", destroy_user_session_path, :method => :delete, :class =>"link" %>
+    <% end %>
     <%#<a class="link" href="/wabook_ranking.html">명예의 전당</a>%>
     <%#<a class="link" href="/wabook_mypage.html">My Page</a>%>
 

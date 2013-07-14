@@ -14,7 +14,7 @@
     </tr>
     <% $i = 1 %>
     <% @checkout_list.each do |l| %>
-        <% book = Books.find_by_id(l[0]) %>
+        <% book = Book.find_by_id(l[0]) %>
       <tr>
         <td><%= $i %></td>
         <td><%= book.title %></td>
@@ -45,7 +45,7 @@
     </tr>
     <% $i = 1 %>
     <% @checkout_list_returned.each do |l| %>
-        <% book = Books.find_by_id(l[0]) %>
+        <% book = Book.find_by_id(l[0]) %>
       <tr>
         <td><%= $i %></td>
         <td><%= book.title %></td>

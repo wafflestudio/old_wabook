@@ -13,7 +13,7 @@ class MypageController < ApplicationController
           list_row.push(c.checkoutdate)
           list_row.push(c.duedate)
 
-          if returned
+          if c.returned
               @checkout_list_returned.push(list_row)
           else
               @checkout_list.push(list_row)
