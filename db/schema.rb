@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710123844) do
+ActiveRecord::Schema.define(:version => 20130714065508) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
     t.string   "category"
     t.string   "author"
     t.string   "publisher"
+    t.boolean  "returned"
+    t.string   "isbn"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -27,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20130710123844) do
     t.integer  "user_id"
     t.datetime "checkoutdate"
     t.datetime "duedate"
-    t.boolean  "return"
+    t.boolean  "returned"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

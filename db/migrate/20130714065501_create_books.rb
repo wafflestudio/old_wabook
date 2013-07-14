@@ -5,6 +5,8 @@ class CreateBooks < ActiveRecord::Migration
       t.string :category
       t.string :author
       t.string :publisher
+      t.boolean :returned
+      t.string :isbn
 
       t.timestamps
     end

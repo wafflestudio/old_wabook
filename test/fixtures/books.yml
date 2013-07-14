@@ -5,9 +5,13 @@ one:
   category: MyString
   author: MyString
   publisher: MyString
+  returned: false
+  isbn: MyString
 
 two:
   title: MyString
   category: MyString
   author: MyString
   publisher: MyString
+  returned: false
+  isbn: MyString

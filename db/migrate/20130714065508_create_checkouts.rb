@@ -5,7 +5,7 @@ class CreateCheckouts < ActiveRecord::Migration
       t.integer :user_id
       t.datetime :checkoutdate
       t.datetime :duedate
-      t.boolean :return
+      t.boolean :returned
 
       t.timestamps
     end

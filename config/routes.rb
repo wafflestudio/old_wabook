@@ -6,6 +6,7 @@ Wabook::Application.routes.draw do
   resources :books
   resources :rank
   resources :mypage
+  resources :addbook
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

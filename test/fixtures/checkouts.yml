@@ -3,13 +3,13 @@
 one:
   book_id: 1
   user_id: 1
-  checkoutdate: 2013-07-10 21:38:44
-  duedate: 2013-07-10 21:38:44
-  return: false
+  checkoutdate: 2013-07-14 15:55:08
+  duedate: 2013-07-14 15:55:08
+  returned: false
 
 two:
   book_id: 1
   user_id: 1
-  checkoutdate: 2013-07-10 21:38:44
-  duedate: 2013-07-10 21:38:44
-  return: false
+  checkoutdate: 2013-07-14 15:55:08
+  duedate: 2013-07-14 15:55:08
+  returned: false

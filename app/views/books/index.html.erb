@@ -9,65 +9,49 @@
   </select>
 </div>
 
-<% @books.each do |book| %>
-  <div>
-    <%= book.category %>
-    <%= book.title  %>
-    <%= book.author %>
-    <%= book.publisher %>
+<div id="booklist">
+
+  <div id="booktop">
+    <p class="category booktop">분류</p>
+    <p class="title booktop">책제목</p>
+    <p class="author booktop">저자</p>
+    <p class="publisher booktop">출판사</p>
+    <p class="available booktop">대여여부</p>
   </div>
-<% end %>
 
-    <div id="booklist">
-
-      <div id="booktop">
-        <p class="category booktop">분류</p>
-        <p class="title booktop">책제목</p>
-        <p class="author booktop">저자</p>
-        <p class="publisher booktop">출판사</p>
-        <p class="available booktop">대여여부</p>
+  <% @books.each do |book| %>
+    <div class="book">
+      <div class = "outside">
+        <p class="category bookClass"><%= book.category %></p>
+        <p class="title bookClass"><%= book.title %></p>
+        <p class="author bookClass"> <%= book.author %></p>
+        <p class="publisher bookClass"><%= book.publisher %></p>
+        <% if book.return %>
+          <button class="available bookClass">
+            대여가능
+          </button>
+        <% else %>
+          <button class="reservation bookClass">
+            대여불가
+          </button>
+        <% end %>
       </div>
-
-      <div class="book">
-        <div class = "outside">
-          <p class="category bookClass">문학</p>
-          <p class="title bookClass">나무</p>
-          <p class="author bookClass">베르나르 베르베르</p>
-          <p class="publisher bookClass">뫼비우스</p>
-          <button class="available bookClass">대여가능</button>
-        </div>
-        <div class = "content">
-          <p>하.............</p>
-        </div>
+      <div class = "content">
+        <p>하.............</p>
       </div>
-
-      <div class="book">
-        <div class = "outside">
-          <p class="category bookClass">문학</p>
-          <p class="title bookClass">나무</p>
-          <p class="author bookClass">베르나르 베르베르</p>
-          <p class="publisher bookClass">뫼비우스</p>
-          <button class="available bookClass">대여불가</button>
-        </div>
-
-        <div class = "content">
-          <p>하.............................</p>
-
-        </div>
-      </div>
-
-
-
-    <div id="search">
-      <form>
-        <select>
-          <option value="책 제목">책 제목</option>
-          <option value="저자">저자</option>
-        </select>
-
-        <input type="text" class="searchbox" />
-        <input type="button" value="검색" />
-      </form>
-
-
     </div>
+  <% end %>
+
+  <div id="search">
+    <form>
+      <select>
+        <option value="책 제목">책 제목</option>
+        <option value="저자">저자</option>
+      </select>
+
+      <input type="text" class="searchbox" />
+      <input type="button" value="검색" />
+    </form>
+
+
+  </div>
