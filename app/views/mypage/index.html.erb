@@ -1,7 +1,9 @@
+<%= @user.email %>
 
 <div id="mybooklist">
   <p>나의 대출 현황</p>
   <table>
+
     <tr>
       <th>순번</th>
       <th>책이름</th>
@@ -10,25 +12,18 @@
       <th>반납예정일</th>
       <th></th>
     </tr>
-
-    <tr>
-      <td>1</td>
-      <td>나는 나와 연애한다</td>
-      <td>문은식</td>
-      <td>2013/03/15</td>
-      <td>2013/03/22</td>
-      <td><button>연장</button></td>
-    </tr>
-
-    <tr>
-      <td>2</td>
-      <td>나는 나와 연애한다</td>
-      <td>문은식</td>
-      <td>2013/03/07</td>
-      <td>2013/03/14</td>
-      <td>연체중</td>
-    </tr>
-
+    <% $i = 1 %>
+    <% @checkout_list.each do |b| %>
+      <tr>
+        <td><%= $i %></td>
+        <td><%= b.title %></td>
+        <td><%= b.author %></td>
+       <td>2013/03/15</td>
+       <td>2013/03/22</td>
+       <td><button>연장</button></td>
+     </tr>
+     <% $i = $i+1 %>
+     <% end %>
   </table>
 
 
