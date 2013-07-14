@@ -10,8 +10,9 @@
       <!--<img src="assets/wabook.png">-->
   <% end %>
   <div id="nav">
-    <%= link_to "명예의 전당", rank_index_path, :class =>"link" %>
+    <%= link_to "책 신규등록", addbook_index_path, :class =>"link" %>
     
+    <%= link_to "명예의 전당", rank_index_path, :class =>"link" %>
     <%= link_to "My Page", mypage_index_path, :class =>"link" %>
     <%= link_to "logout", destroy_user_session_path, :method => :delete, :class =>"link" %>
     <%#<a class="link" href="/wabook_ranking.html">명예의 전당</a>%>
