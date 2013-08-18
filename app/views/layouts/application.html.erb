@@ -3,16 +3,25 @@
 <head>
   <title>Wabook</title>
   <script type="text/javascript" src="/test.js"></script>
-
-
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
   <%= link_to books_path, :class => "logo" do %>
-    <img src="assets/wabook.png">
+      <%= image_tag "wabook.png" %>
+      <!--<img src="assets/wabook.png">-->
   <% end %>
   <div id="nav">
-    <%= link_to "명예의 전당", rank_index_path, :class =>"link" %>
+    <%= link_to "책 신규등록", addbook_index_path, :class =>"link" %>
     
+    <%= link_to "명예의 전당", rank_index_path, :class =>"link" %>
     <%= link_to "My Page", mypage_index_path, :class =>"link" %>
-    <%= link_to "logout", destroy_user_session_path, :method => :delete, :class =>"link" %>
+    <% if !signed_in? %>
+        <%= link_to "login", new_user_session_path, :method => :create, :class => "link" %>
+    <% else %>
+        <%= link_to "logout", destroy_user_session_path, :method => :delete, :class =>"link" %>
+    <% end %>
     <%#<a class="link" href="/wabook_ranking.html">명예의 전당</a>%>
     <%#<a class="link" href="/wabook_mypage.html">My Page</a>%>
 
@@ -22,12 +31,6 @@
 
   <div id="c">
   </div>
-
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
 
   <%= yield %>
 
