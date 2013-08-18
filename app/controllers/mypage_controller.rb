@@ -1,7 +1,8 @@
 class MypageController < ApplicationController
 
-  def index
+    def index
     @checkout_list = Array.new
+    @checkout_list_returned = Array.new
 
     @user = current_user
     @checkout = Checkout.all
@@ -14,3 +15,4 @@ class MypageController < ApplicationController
     end
   end
 end
+
