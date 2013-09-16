@@ -37,7 +37,17 @@
         <% end %>
       </div>
       <div class = "content">
-        <p>하.............</p>
+
+        <% require 'rubygems' %>
+        <% require 'nokogiri' %>
+        <% require 'open-uri' %>
+        <% doc = Nokogiri::XML(open('http://book.interpark.com/api/search.api?key=BB76C57E2E5D09210AD11705A6102C4A9F469F0EA24C2BAF365CCF8A0DF81BCB&query=8983920688&queryType=isbn'))  %>
+        <% root = doc.root %>
+
+        <% #xml = Nokogiri::XML('http://book.interpark.com/api/search.api?key=BB76C57E2E5D09210AD11705A6102C4A9F469F0EA24C2BAF365CCF8A0DF81BCB&query=8983920688&queryType=isbn')) %>
+        <% #titles = xml.search('title').map do |title| %>
+          <% #%w[%>
+
       </div>
     </div>
   <% end %>
