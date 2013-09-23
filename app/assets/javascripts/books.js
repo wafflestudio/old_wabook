@@ -6,6 +6,7 @@ $(document).ready(function(){
     var r = confirm("이 책을 빌리시겠습니까?")
     if (r){
       alert("빌림!")
+      //Book.returned=false
     }
     else{
       alert("안빌림!")
