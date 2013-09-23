@@ -37,7 +37,18 @@
         <% end %>
       </div>
       <div class = "content">
-        <p>하.............</p>
+
+        <% require 'nokogiri' %>
+        <% require 'open-uri' %>
+        <% #doc = Nokogiri::XML(open('http://book.interpark.com/api/search.api?key=BB76C57E2E5D09210AD11705A6102C4A9F469F0EA24C2BAF365CCF8A0DF81BCB&query=8983920688&queryType=isbn'))  %>
+        <% doc = Nokogiri::XML(open('http://book.interpark.com/api/search.api?key=BB76C57E2E5D09210AD11705A6102C4A9F469F0EA24C2BAF365CCF8A0DF81BCB&query='+ book.isbn + '&queryType=isbn'))  %>
+        <img class="pic" src="<%= doc.xpath("//item[1]/coverLargeUrl").text %>">
+        
+        <p class="title contentClass"><%= doc.xpath("//item/title").text %></p>
+        <p class="category contentClass"><%= doc.xpath("//item/categoryName").text %></p>
+        <p class="publisher contentClass"><%= doc.xpath("//item/publisher").text %></p>
+        
+        <p class="description contentClass"><%= doc.xpath("//item/description").text %></p>
       </div>
     </div>
   <% end %>
