@@ -1,60 +1,58 @@
 
-
 <div id="mybooklist">
-  <p>나의 대출 현황</p>
-  <table>
 
-    <tr>
-      <th>순번</th>
-      <th>책이름</th>
-      <th>저자</th>
-      <th>대출일</th>
-      <th>반납예정일</th>
-      <th></th>
-    </tr>
-    <% $i = 1 %>
-    <% @checkout_list.each do |l| %>
-        <% book = Book.find_by_id(l[0]) %>
-      <tr>
-        <td><%= $i %></td>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= l[1] %></td>
-        <td><%= l[2] %></td>
-       <td><button>연장</button></td>
-     </tr>
-     <% $i = $i+1 %>
-     <% end %>
-  </table>
+  <p class="mybooklist">나의 대출 현황</p>
+  <div id="booktop">
+    <p class="order booktop">순번</p>
+    <p class="title booktop">책제목</p>
+    <p class="author booktop">저자</p>
+    <p class="lendDate booktop">대출일</p>
+    <p class="returnDate booktop">반납예정일</p>
+    <p class="prolong booktop">연장</p>
+  </div>
 
+  <% $i = 1 %>
+  <% @checkout_list.each do |l| %>
+    <% book = Book.find_by_id(l[0]) %>
+    <div class="book">
+      <p class="order bookClass"><%= $i %></p>
+      <p class="title bookClass"><%= book.title %></p>
+      <p class="author bookClass"><%= book.author %></p>
+      <p class="lendDate bookClass"><%= l[1] %></p>
+      <p class="returnDate bookClass"><%= l[2] %></p>
+      <button class="prolong bookClass">연장</button>
+      <% $i = $i+1 %>
+    <% end %>
+  </div>
 
 </div>
 
 <div id="prevlist">
 
-  <p>이전 대출 내역</p>
-  <table>
+  <p class="prevlist">이전 대출 내역</p>
 
-    <tr>
-      <th>순번</th>
-      <th>책이름</th>
-      <th>저자</th>
-      <th>대출일</th>
-      <th>반납예정일</th>
-      <th></th>
-    </tr>
-    <% $i = 1 %>
-    <% @checkout_list_returned.each do |l| %>
-        <% book = Book.find_by_id(l[0]) %>
-      <tr>
-        <td><%= $i %></td>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= l[1] %></td>
-        <td><%= l[2] %></td>
-       <td><button>연장</button></td>
-     </tr>
-     <% $i = $i+1 %>
-     <% end %>
-  </table>
+  <div id="booktop">
+    <p class="order booktop">순번</p>
+    <p class="title booktop">책제목</p>
+    <p class="author booktop">저자</p>
+    <p class="lendDate booktop">대출일</p>
+    <p class="returnDate booktop">반납일</p>
+  </div>
+
+  <% $i = 1 %>
+  <% @checkout_list_returned.each do |l| %>
+    <% book = Book.find_by_id(l[0]) %>
+
+    <div class="book">
+      <p class="order bookClass"><%= $i %></p>
+      <p class="title bookClass"><%= book.title %></p>
+      <p class="author bookClass"><%= book.author %></p>
+      <p class="lendDate bookClass"><%= l[1] %></p>
+      <p class="returnDate bookClass"><%= l[2] %></p>
+
+      <% $i = $i+1 %>
+    <% end %>
+  </div>
+</div>
+
 
