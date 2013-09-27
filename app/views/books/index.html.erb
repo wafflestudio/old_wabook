@@ -1,3 +1,4 @@
+
 <div id="categorize">
   <p class="categorize">see</p>
   <select>
@@ -27,11 +28,11 @@
         <p class="author bookClass"> <%= book.author %></p>
         <p class="publisher bookClass"><%= book.publisher %></p>
         <% if book.returned %>
-          <button class="available bookClass">
+          <button book-id=<%= book.id %> class="available bookClass">
             대여가능
           </button>
         <% else %>
-          <button class="reservation bookClass">
+          <button book-id=<%= book.id %> class="reservation bookClass">
             대여불가
           </button>
         <% end %>

@@ -7,6 +7,9 @@ Wabook::Application.routes.draw do
   resources :rank
   resources :mypage
   resources :addbook
+  
+  get '/lend/:id' => "books#lend"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -4,7 +4,14 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
- 
+
+  def lend
+    @book = Book.find(params[:id])
+    @book.returned = false
+    @book.save
+    render :json => @book.to_json
+  end
+
   def create
     @book = Book.new(params[:book])
 
