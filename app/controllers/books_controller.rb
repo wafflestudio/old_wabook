@@ -9,6 +9,15 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.returned = false
     @book.save
+
+    @checkout = Checkout.new
+    @checkout.book_id = params[:id]
+    @checkout.user_id = current_user.id
+    @checkout.checkoutdate = Time.now
+    @checkout.duedate = Time.now+14.day
+    @checkout.returned = false
+    @checkout.save
+
     render :json => @book.to_json
   end
 

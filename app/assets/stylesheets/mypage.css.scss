@@ -13,17 +13,22 @@ body {
   margin-right:auto;
 }
 
-#booklist {
+#mybooklist {
   width:100%;
   margin-top:20px;
   display:inline-block;
 }
 
+#prevlist {
+  width:100%;
+  margin-top:50px;
+  display:inline-block;
+}
 .booktop, .bookClass {
-margin-top:4px;
-display: inline-block;
+  margin-top:4px;
+  display: inline-block;
   text-align: center;
-float: left;
+  float: left;
 }
 
 p.order {
@@ -43,21 +48,34 @@ width:20%;
 
 p.lendDate {
 
-width:15%;
+width:12%;
 }
 
-p.returnDate {
+p.dueDate {
 
-width:15%;
+width:12%;
 }
 
 p.prolong {
-  width:10%;
+  width:8%;
+}
+
+p.return {
+  width:8%
+}
+
+p.returnDate {
+  width:24%
 }
 
 button.prolong {
   margin-top:1px;
-  width:15%;
+  width:8%;
+}
+
+button.return {
+  margin-top:1px;
+  width:8%;
 }
 
 #booktop {
@@ -67,7 +85,7 @@ button.prolong {
 }
 
 .book{
-       margin-top:4px;
+  margin-top:4px;
 }
 
 

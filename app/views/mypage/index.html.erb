@@ -7,8 +7,9 @@
     <p class="title booktop">책제목</p>
     <p class="author booktop">저자</p>
     <p class="lendDate booktop">대출일</p>
-    <p class="returnDate booktop">반납예정일</p>
+    <p class="dueDate booktop">반납예정일</p>
     <p class="prolong booktop">연장</p>
+    <p class="return booktop">반납</p>
   </div>
 
   <% $i = 1 %>
@@ -19,11 +20,12 @@
       <p class="title bookClass"><%= book.title %></p>
       <p class="author bookClass"><%= book.author %></p>
       <p class="lendDate bookClass"><%= l[1] %></p>
-      <p class="returnDate bookClass"><%= l[2] %></p>
+      <p class="dueDate bookClass"><%= l[2] %></p>
       <button class="prolong bookClass">연장</button>
+      <button class="return bookClass">반납</button>
       <% $i = $i+1 %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
 </div>
 
