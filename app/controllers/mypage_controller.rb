@@ -12,7 +12,8 @@ class MypageController < ApplicationController
           list_row.push(c.book_id)
           list_row.push(c.checkoutdate)
           list_row.push(c.duedate)
-
+          list_row.push(c.id)
+          list_row.push(c.updated_at)
           if c.returned
               @checkout_list_returned.push(list_row)
           else
@@ -32,7 +33,18 @@ class MypageController < ApplicationController
 
      @checkout = Checkout.find(params[:check_id])
      @checkout.returned = true
-     @chekcout.save
+     @checkout.save
+
+     render :json => @book.to_json
+   end
+
+
+   def prolong
+     @checkout = Checkout.find(params[:check_id])
+     @checkout.duedate = @checkout.duedate+7.day
+     @checkout.save
+
+     render :json => @checkout.to_json
    end
 end
 

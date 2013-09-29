@@ -21,8 +21,8 @@
       <p class="author bookClass"><%= book.author %></p>
       <p class="lendDate bookClass"><%= l[1].to_date %></p>
       <p class="dueDate bookClass"><%= l[2].to_date %></p>
-      <button book-id=<% book.id %> check-id=1 class="prolong bookClass">연장</button>
-      <button book-id=<% book.id %> check-id=1 class="return bookClass">반납</button>
+      <button check-id=<%= l[3] %> class="prolong bookClass">연장</button>
+      <button book-id=<%= book.id %> check-id=<%= l[3] %> class="return bookClass">반납</button>
       <% $i = $i+1 %>
     </div>
   <% end %>
@@ -49,12 +49,11 @@
       <p class="order bookClass"><%= $i %></p>
       <p class="title bookClass"><%= book.title %></p>
       <p class="author bookClass"><%= book.author %></p>
-      <p class="lendDate bookClass"><%= l[1] %></p>
-      <p class="returnDate bookClass"><%= l[2] %></p>
-
+      <p class="lendDate bookClass"><%= l[1].to_date %></p>
+      <p class="returnDate bookClass"><%= l[4].to_date %></p>
+    </div>
       <% $i = $i+1 %>
     <% end %>
-  </div>
 </div>
 
 

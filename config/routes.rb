@@ -12,6 +12,8 @@ Wabook::Application.routes.draw do
 
   get '/return/:book_id/:check_id' => "mypage#return"
 
+  get '/prolong/:check_id' => "mypage#prolong"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
