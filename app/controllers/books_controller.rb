@@ -13,8 +13,8 @@ class BooksController < ApplicationController
     @checkout = Checkout.new
     @checkout.book_id = params[:id]
     @checkout.user_id = current_user.id
-    @checkout.checkoutdate = Time.now
-    @checkout.duedate = Time.now+14.day
+    @checkout.checkoutdate = Time.now+9.hour
+    @checkout.duedate = Time.now+9.hour+14.day
     @checkout.returned = false
     @checkout.save
 

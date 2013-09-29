@@ -10,6 +10,8 @@ Wabook::Application.routes.draw do
   
   get '/lend/:id' => "books#lend"
 
+  get '/return/:book_id/:check_id' => "mypage#return"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

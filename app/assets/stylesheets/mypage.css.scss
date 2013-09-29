@@ -85,7 +85,12 @@ button.return {
 }
 
 .book{
-  margin-top:4px;
+  height:auto;
+  padding-bottom:4px;
 }
 
-
+.book:after {
+  content:"";
+  display:block;
+  clear:both;
+}

@@ -24,5 +24,15 @@ class MypageController < ApplicationController
       end
     end
   end
+
+   def return
+     @book = Book.find(params[:book_id])
+     @book.returned = true
+     @book.save
+
+     @checkout = Checkout.find(params[:check_id])
+     @checkout.returned = true
+     @chekcout.save
+   end
 end
 

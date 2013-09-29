@@ -26,10 +26,10 @@ body {
 }
 
 .booktop, .bookClass {
-margin-top:4px;
-display: inline-block;
+  margin-top:4px;
+  display: inline-block;
   text-align: center;
-float: left;
+  float: left;
 }
 
 p.categorize {
@@ -37,12 +37,12 @@ p.categorize {
 
 p.category {
 
-width:10%;
+  width:10%;
 }
 
 p.title {
 
-width:35%;
+  width:35%;
 }
 
 p.author {
@@ -64,7 +64,7 @@ button.reservation {
 
 p.available {
 
-width:15%;
+  width:15%;
 }
 
 button.available {
@@ -79,13 +79,18 @@ button.available {
 }
 
 .book{
-       margin-top:4px;
+  margin-top:4px;
 }
 
 .outside {
-height:24px;
+  height:auto;
+  padding-bottom:4px;
+}
 
-
+.outside:after {
+  content:"";
+  display:block;
+  clear:both;
 }
 
 .content{
