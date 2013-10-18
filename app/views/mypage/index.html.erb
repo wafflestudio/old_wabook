@@ -15,7 +15,7 @@
   <% $i = 1 %>
   <% @checkout_list.each do |l| %>
     <% book = Book.find_by_id(l[0]) %>
-    <div class="book">
+    <div book-id=<%= book.id %> class="book">
       <p class="order bookClass"><%= $i %></p>
       <p class="title bookClass"><%= book.title %></p>
       <p class="author bookClass"><%= book.author %></p>

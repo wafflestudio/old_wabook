@@ -5,7 +5,9 @@ $(document).ready(function(){
       alert("반납!")
       var bookId = $(this).attr('book-id')
       var checkId = $(this).attr('check-id')
-      $.get('/return/'+bookId+'/'+checkId, function(data) {}) //refresh
+      $.get('/return/'+bookId+'/'+checkId, function(data) {
+        $('div[book-id='+bookId+']').hide() 
+        }) //refresh
     }
     else{
       alert("반납안함!")
@@ -17,7 +19,7 @@ $(document).ready(function(){
     if(r){
       alert("연장!")
       var checkId = $(this).attr('check-id')
-      $.get('/prolong/'+checkId, function(data) {})
+      $.get('/prolong/'+checkId, function(data) { $() })
     }
     else{
       alert("연장안함!")
