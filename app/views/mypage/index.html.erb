@@ -1,4 +1,3 @@
-
 <div id="mybooklist">
 
   <p class="mybooklist">나의 대출 현황</p>
@@ -10,22 +9,11 @@
     <p class="dueDate booktop">반납예정일</p>
     <p class="prolong booktop">연장</p>
     <p class="return booktop">반납</p>
-  </div>
+ </div>
 
-  <% $i = 1 %>
-  <% @checkout_list.each do |l| %>
-    <% book = Book.find_by_id(l[0]) %>
-    <div book-id=<%= book.id %> class="book">
-      <p class="order bookClass"><%= $i %></p>
-      <p class="title bookClass"><%= book.title %></p>
-      <p class="author bookClass"><%= book.author %></p>
-      <p class="lendDate bookClass"><%= l[1].to_date %></p>
-      <p class="dueDate bookClass"><%= l[2].to_date %></p>
-      <button check-id=<%= l[3] %> class="prolong bookClass">연장</button>
-      <button book-id=<%= book.id %> check-id=<%= l[3] %> class="return bookClass">반납</button>
-      <% $i = $i+1 %>
-    </div>
-  <% end %>
+ <% @currcheckouts.each do |c| %>
+   <%= render 'current', :checkout => c %>
+ <% end %>
 
 </div>
 
@@ -41,19 +29,9 @@
     <p class="returnDate booktop">반납일</p>
   </div>
 
-  <% $i = 1 %>
-  <% @checkout_list_returned.each do |l| %>
-    <% book = Book.find_by_id(l[0]) %>
-
-    <div class="book">
-      <p class="order bookClass"><%= $i %></p>
-      <p class="title bookClass"><%= book.title %></p>
-      <p class="author bookClass"><%= book.author %></p>
-      <p class="lendDate bookClass"><%= l[1].to_date %></p>
-      <p class="returnDate bookClass"><%= l[4].to_date %></p>
-    </div>
-      <% $i = $i+1 %>
-    <% end %>
+  <% @prevcheckouts.each_with_index do |c, i| %>
+    <%= render 'prev', :checkout => c, :index => i+1 %>
+  <% end %>
 </div>
 
 

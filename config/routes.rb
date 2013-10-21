@@ -14,6 +14,7 @@ Wabook::Application.routes.draw do
 
   get '/prolong/:check_id' => "mypage#prolong"
 
+  match '/listSpecificPageWork', to: 'books#listSpecificPageWork'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

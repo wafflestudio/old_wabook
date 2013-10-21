@@ -1,50 +1,45 @@
 class MypageController < ApplicationController
+  require 'pp'
+  def index
+    @currcheckouts = current_user.checkouts.find_all_by_returned(false)
+    @prevcheckouts = current_user.checkouts.find_all_by_returned(true)
+    respond_to do |format|
+      format.html
+      format.json {
+        render :json => {cur_checkouts: @currcheckouts, prev_checkouts: @prevcheckouts}
+      }
 
-    def index
-    @checkout_list = Array.new
-    @checkout_list_returned = Array.new
-
-    @user = current_user
-    @checkout = Checkout.all
-    @checkout.each do |c|
-      if c.user_id == @user.id
-          list_row = Array.new
-          list_row.push(c.book_id)
-          list_row.push(c.checkoutdate)
-          list_row.push(c.duedate)
-          list_row.push(c.id)
-          list_row.push(c.updated_at)
-          if c.returned
-              @checkout_list_returned.push(list_row)
-          else
-              @checkout_list.push(list_row)
-          end
-        # @book_id = c.book_id
-        # @book = Book.all.find_all { |a| a.id == @book_id }
-        # @checkout_list.push(@book[0])
-      end
     end
   end
 
-   def return
-     @book = Book.find(params[:book_id])
-     @book.returned = true
-     @book.save
+  def return
+    book = Book.find(params[:book_id])
+    book.returned = true
+    book.save
 
-     @checkout = Checkout.find(params[:check_id])
-     @checkout.returned = true
-     @checkout.save
+    checkout = Checkout.find(params[:check_id])
+    checkout.returned = true
+    checkout.save
 
-     render :json => @book.to_json
-   end
+    cur_checkouts = current_user.checkouts.find_all_by_returned(false)
+
+    render :json => cur_checkouts.to_json
+  end
 
 
-   def prolong
-     @checkout = Checkout.find(params[:check_id])
-     @checkout.duedate = @checkout.duedate+7.day
-     @checkout.save
+  def prolong
+    @checkout = Checkout.find(params[:check_id])
 
-     render :json => @checkout.to_json
-   end
+    if @checkout.prolongcount > 2
+      render :json => {status: "error"}
+    else
+      @checkout.duedate = @checkout.duedate+7.day
+      @checkout.prolongcount = @checkout.prolongcount+1
+      @checkout.save
+      render :json => {status: "OK"}
+
+      #render :json => @checkout.to_json
+    end
+  end
 end
 
