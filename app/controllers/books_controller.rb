@@ -26,20 +26,24 @@ class BooksController < ApplicationController
 
 
   def lend
-    @book = Book.find(params[:id])
-    @book.returned = false
-    @book.save
+    if current_user.checkouts.find(:all, :conditions => {:returned => false}).count > 4
+      render :json => {status: "error"}
+    else
+      @book = Book.find(params[:id])
+      @book.returned = false
+      @book.save
 
-    @checkout = Checkout.new
-    @checkout.book_id = params[:id]
-    @checkout.user_id = current_user.id
-    @checkout.checkoutdate = Time.now+9.hour
-    @checkout.duedate = Time.now+9.hour+14.day
-    @checkout.returned = false
-    @checkout.prolongcount = 0
-    @checkout.save
+      @checkout = Checkout.new
+      @checkout.book_id = params[:id]
+      @checkout.user_id = current_user.id
+      @checkout.checkoutdate = Time.now+9.hour
+      @checkout.duedate = Time.now+9.hour+14.day
+      @checkout.returned = false
+      @checkout.prolongcount = 0
+      @checkout.save
 
-    render :json => @book.to_json
+      render :json => @book.to_json
+    end
   end
 
   def create
