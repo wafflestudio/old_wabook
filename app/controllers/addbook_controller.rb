@@ -1,8 +1,8 @@
 class AddbookController < ApplicationController
   def index
-    
-    @prev_added_book = Book.find_by_isbn(params[:prev_book])
-      
+    if params.has_key?(:prev_book)
+      @prev_added_book = Book.find_by_isbn(params[:prev_book])
+    end
   end
   
   def new
