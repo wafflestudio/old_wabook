@@ -52,14 +52,6 @@
   <% end %>
 
 
-  <% @totalPageList.each do |page| %>
-    <% if page == @current_page.to_i %>
-      <b id="currPageNum"><%= page %></b>
-    <% else %>
-      <a id="pageNum" href="/pagination?current_page=<%= page %>"><%= page %></a>
-    <% end %>
-  <% end %>
-
 
   <div id="search">
     <form action="/search">

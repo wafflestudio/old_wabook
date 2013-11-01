@@ -5,6 +5,11 @@
   ISBN:<%= text_field_tag 'inputISBN' %>
   <input type="submit" value="등록"/>
 <% end %>
+<% if defined?(@prev_added_book) %>
+  <p id="add_confirm"><%= @prev_added_book.title %> (저자: <%= @prev_added_book.author %>) 이(가) 등록되었습니다!</p>
+<% else %>
+  <p id="add_confirm">책을 등록하세요</p>
+<% end %>
 
 <% if false %>
   <h1>New book</h1>

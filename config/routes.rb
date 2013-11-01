@@ -2,6 +2,8 @@ Wabook::Application.routes.draw do
 
   devise_for :users
 
+  get '/search' => "books#search"
+
   root :to => "books#index"
   resources :books
   resources :rank
