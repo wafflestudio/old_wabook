@@ -42,7 +42,7 @@ class BooksController < ApplicationController
       @checkout.prolongcount = 0
       @checkout.save
 
-      render :json => @book.to_json
+      render :json => {status: "OK"}
     end
   end
 
