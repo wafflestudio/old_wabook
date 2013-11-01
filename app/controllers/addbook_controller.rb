@@ -1,5 +1,8 @@
 class AddbookController < ApplicationController
   def index
+    
+    @prev_added_book = Book.find_by_isbn(params[:prev_book])
+      
   end
   
   def new
@@ -17,7 +20,7 @@ class AddbookController < ApplicationController
     newbook.author = doc.xpath("//item/author").text
     newbook.save
    
-    redirect_to :back
+    redirect_to :action => :index, :prev_book => params[:inputISBN]
   end
 
 end
