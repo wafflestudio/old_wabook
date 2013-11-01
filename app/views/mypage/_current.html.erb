@@ -1,0 +1,10 @@
+<% book = checkout.book %>
+<div id="book_<%=book.id%>" data-book_id=<%= book.id %> class="book">
+  <p class="order bookClass"></p>
+  <p class="title bookClass"><%= book.title %></p>
+  <p class="author bookClass"><%= book.author %></p>
+  <p class="lendDate bookClass"><%= checkout.checkoutdate.to_date %></p>
+  <p class="dueDate bookClass"><%= checkout.duedate.to_date %></p>
+  <button data-check_id=<%= checkout.id %> class="prolong bookClass">연장</button>
+  <button data-book_id=<%= book.id %> data-check_id=<%= checkout.id %> class="return bookClass">반납</button>
+</div>

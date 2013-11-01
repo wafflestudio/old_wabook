@@ -1,0 +1,9 @@
+<% book = checkout.book %>
+<div class="book">
+  <p class="order bookClass"><%= index %></p>
+  <p class="title bookClass"><%= book.title %></p>
+  <p class="author bookClass"><%= book.author %></p>
+  <p class="lendDate bookClass"><%= checkout.checkoutdate.to_date %></p>
+  <p class="returnDate bookClass"><%= checkout.checkoutdate.to_date %></p>
+</div>
+
